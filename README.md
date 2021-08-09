@@ -14,12 +14,11 @@ in a crash
 If you're interested in contributing or learning about
 the project read the comments in this order
 
-    ```
-    bf.h -> stack.c -> struct.c -> bf.c
-    ```
+    
+   * bf.h -> stack.c -> struct.c -> bf.c
+   
 
 If you're serious about benchmarking checkout 
 
-    ```
-    make profile
-    ```
+   * make profile
+    
