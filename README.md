@@ -3,7 +3,7 @@
 Everything is fully functional 
 
 The bracket mapping system and memory management should allow you to run
-on low memory, low power systems.
+embedded systems
 
 https://github.com/rdebath/Brainfuck/tree/master/testing for benchmarking 
 
@@ -14,8 +14,12 @@ in a crash
 If you're interested in contributing or learning about
 the project read the comments in this order
 
-    ```bf.h -> stack.c -> struct.c -> bf.c```
+    ```
+    bf.h -> stack.c -> struct.c -> bf.c
+    ```
 
 If you're serious about benchmarking checkout 
 
-    ```make profile```
+    ```
+    make profile
+    ```
