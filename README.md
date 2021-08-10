@@ -13,8 +13,11 @@ in a crash
 
 Commands for building and use:
     
-    * make
-    * ./bcc program.bf
+    $ make
+    $ ./bcc program.bf
+Example:
+    
+    $ ./bcc bt/mandelbrot.bf
 
 If you're interested in contributing or learning about
 the project read the comments in this order
@@ -25,5 +28,5 @@ the project read the comments in this order
 
 If you're serious about benchmarking checkout 
 
-   * make profile
+    $ make profile
     
