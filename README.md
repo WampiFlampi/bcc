@@ -12,6 +12,7 @@ mismatched brackets and lack of file input will result
 in a crash
 
 Commands for building and use:
+    
     * make
     * ./bcc program.bf
 
