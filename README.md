@@ -11,6 +11,9 @@ Error handling is also in the works, as of now,
 mismatched brackets and lack of file input will result
 in a crash
 
+Commands for building and use:
+    * make
+    * ./bcc program.bf
 
 If you're interested in contributing or learning about
 the project read the comments in this order
