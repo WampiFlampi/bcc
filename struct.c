@@ -6,8 +6,6 @@
 void push(struct node *);
 struct node *pop(void);
 
-//tree head and pointer to current node
-struct node head, *h = &head, *cr = &head;
 
 /*
 Logically, an open bracket = ++treedepth
@@ -24,11 +22,21 @@ which I store on the stack after a [[
 */
 
 static char lstch;
+struct node *initNode() {
+    struct node *n = malloc(sizeof(struct node));
+    n->in = 0;
+    n->out = 0; 
+    n->l = NULL;
+    n->d = n;
+    return n;
+}
+
+//tree head and pointer to current node
+struct node head, *h = &head, *cr = &head;
 
 //allocates a new node, maps previous node, and returns the new one
 static struct node *map(struct node *in, int dir) {
-    struct node *n;
-    n = malloc(sizeof(struct node));
+    struct node *n = initNode();
 
     if (dir == 1) { 
         in->l = n;
@@ -48,6 +56,7 @@ static struct node *map(struct node *in, int dir) {
 //Form also creates the bracket map using map() and lstch
 
 char *form(FILE *f) {
+    h->d = h; 
     char c;
     size_t buffer = 1000;
     //instruction array

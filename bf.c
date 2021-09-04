@@ -9,8 +9,6 @@ int main(int argc, char *argv[]) {
     FILE *fp = fopen(argv[1], "r");
 
     extern struct node *h;  
-    struct node navi, *nav = &navi;
-    nav->l = h;
 
     char *form(FILE *);
     char lstch = ']';
@@ -64,37 +62,26 @@ int main(int argc, char *argv[]) {
             case '.':
                 putchar(*ptr);
                 break;
-            
             case '[':
-                //this is basically an if statement 
-                nav = (lstch == ']') ? nav->l : nav->d;
-                lstch = '[';
-                
-                //set lstch to ']' because in the context of the tree,
-                //when skipping past a node, this is correct
-                if (*ptr == 0) {
-                    lstch = ']';
-                    pos = (start + nav->out);
+                if (*ptr) {
+                    h = h->d;
+                } else { 
+                    pos = start + h->out;
+                    h = h->l;
                 }
-                 
-            
                 break;
             case ']':
-
-                nav = (lstch == ']') ? nav->l : nav;
-                lstch = ']';
-
- 
                 if (*ptr) {
-                    lstch = '[';
-                    pos = (start + nav->in); 
+                    pos = start + h->in;
+                    h = h->d;
+                } else { 
+                    h = h->l;
                 }
+                break;
 
-                break;
-           
-            default:
-                break;
-        }
+            
+       }        
+        
         ++pos;
     }  
     putchar('\n');
